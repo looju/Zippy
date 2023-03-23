@@ -1,4 +1,3 @@
-import { View, Text } from "react-native";
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { TabNavigator } from "./TabNavigator";
@@ -15,7 +14,10 @@ export const RootNavigator = () => {
   return (
     <RootStack.Navigator>
       <RootStack.Group>
-        <RootStack.Screen name="name" component={TabNavigator} />
+        <RootStack.Screen name="Main" component={TabNavigator} />
+      </RootStack.Group>
+      <RootStack.Group>
+
       </RootStack.Group>
     </RootStack.Navigator>
   );

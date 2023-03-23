@@ -6,12 +6,20 @@
   position: fixed
 }
 
+.absolute {
+  position: absolute
+}
+
 .relative {
   position: relative
 }
 
 .block {
   display: block
+}
+
+.inline {
+  display: inline
 }
 
 .flex {
@@ -42,8 +50,28 @@
   display: none
 }
 
+.h-0 {
+  height: 0px
+}
+
+.flex-shrink {
+  flex-shrink: 1
+}
+
 .shrink {
   flex-shrink: 1
+}
+
+.flex-grow {
+  flex-grow: 1
+}
+
+.grow {
+  flex-grow: 1
+}
+
+.rounded {
+  border-radius: 0.25rem
 }
 
 .border {
@@ -52,6 +80,10 @@
 
 .border-none {
   border-style: none
+}
+
+.uppercase {
+  text-transform: uppercase
 }
 
 .lowercase {
