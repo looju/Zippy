@@ -1,1 +1,75 @@
+.static {
+  position: static
+}
 
+.fixed {
+  position: fixed
+}
+
+.relative {
+  position: relative
+}
+
+.block {
+  display: block
+}
+
+.flex {
+  display: flex
+}
+
+.table {
+  display: table
+}
+
+.table-column {
+  display: table-column
+}
+
+.table-row {
+  display: table-row
+}
+
+.grid {
+  display: grid
+}
+
+.contents {
+  display: contents
+}
+
+.hidden {
+  display: none
+}
+
+.shrink {
+  flex-shrink: 1
+}
+
+.border {
+  border-width: 1px
+}
+
+.border-none {
+  border-style: none
+}
+
+.lowercase {
+  text-transform: lowercase
+}
+
+.capitalize {
+  text-transform: capitalize
+}
+
+.italic {
+  font-style: italic
+}
+
+.underline {
+  text-decoration-line: underline
+}
+
+.overline {
+  text-decoration-line: overline
+}
