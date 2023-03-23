@@ -5,9 +5,11 @@ import { TabNavigator } from "./TabNavigator";
 
 const RootStack = createStackNavigator();
 
-export type RootStackParamList={
-    Main:undefined
-}
+export type RootStackParamList = {
+  Main: undefined;
+  MyModal: { userId: string; name: string };
+  Order: any;
+};
 
 export const RootNavigator = () => {
   return (
