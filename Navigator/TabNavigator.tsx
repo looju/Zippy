@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { CustomerScreens } from "../Screens/CustomerScreens";
 import { OrderScreens } from "./../Screens/OrderScreen";
 import { useNavigation } from "@react-navigation/native";
+import Entypo from "react-native-vector-icons/Entypo"
 
 export type TabStackParamList = {
   Customers: undefined;
@@ -28,17 +29,17 @@ export const TabNavigator = () => {
           let iconName;
 
           if (route.name === "Customers") {
-            iconName = "ios-information-circle-outline";
+            iconName = "users";
             size = focused ? 20 : 15;
           } else if (route.name === "Orders") {
-            iconName = "ios-list-outline";
+            iconName = "box";
             size = focused ? 20 : 15;
           }
 
           // You can return any component that you like here!
-          return <Ionicons name={iconName} size={size} color={color} />;
+          return <Entypo name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: "tomato",
+        tabBarActiveTintColor: "#59c1cc",
         tabBarInactiveTintColor: "gray",
       })}
     >
