@@ -1,5 +1,5 @@
 import { View, Text, ScrollView } from "react-native";
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import { useTailwind } from "tailwind-rn/dist";
 import {
   CompositeNavigationProp,
@@ -17,7 +17,14 @@ export type CustomerScreensNavigationProps = CompositeNavigationProp<
 
 export const CustomerScreens = () => {
   const tw = useTailwind();
-  const navigation = useNavigation();
+  const navigation = useNavigation<CustomerScreensNavigationProps>();
+
+
+  useLayoutEffect(()=>{
+   navigation.setOptions({
+    headerShown:false
+   })
+  },[])
 
   return (
     <ScrollView>

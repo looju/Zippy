@@ -38,6 +38,8 @@ export const TabNavigator = () => {
 
           return <Entypo name={iconName} size={size} color={color} />;
         },
+        headerTitleAlign:"center",
+        
         tabBarActiveTintColor: "#59c1cc",
         tabBarInactiveTintColor: "gray",
       })}
