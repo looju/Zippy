@@ -1,5 +1,6 @@
-import { View, Text, ScrollView, Image } from "react-native";
-import React, { useLayoutEffect } from "react";
+import { View, Text, ScrollView, Image} from "react-native";
+import React, { useLayoutEffect, useState } from "react";
+import {TextInput} from "react-native-paper"
 import { useTailwind } from "tailwind-rn/dist";
 import {
   CompositeNavigationProp,
@@ -18,17 +19,25 @@ export type CustomerScreensNavigationProps = CompositeNavigationProp<
 export const CustomerScreens = () => {
   const tw = useTailwind();
   const navigation = useNavigation<CustomerScreensNavigationProps>();
+  const [input, setInput] = useState<string>("");
 
-
-  useLayoutEffect(()=>{
-   navigation.setOptions({
-    headerShown:false
-   })
-  },[])
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerShown: false,
+    });
+  }, []);
 
   return (
-    <ScrollView style={{backgroundColor:"#87cefa"}}>
-     <Image source={require("../assets/freight.jpg")} style={tw('w-full h-64')}/>
+    <ScrollView style={{ backgroundColor: "#87cefa" }}>
+      <Image
+        source={require("../assets/freight.jpg")}
+        style={tw("w-full h-64")}
+      />
+      <TextInput
+        value={input}
+        onChangeText={(text) => setInput(text)}
+        style={tw("bg-white pb-0 pt-5 px-10")}
+      />
     </ScrollView>
   );
 };

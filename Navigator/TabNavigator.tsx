@@ -41,7 +41,6 @@ export const TabNavigator = () => {
         headerTitleAlign: "center",
         tabBarActiveTintColor: "#59c1cc",
         tabBarInactiveTintColor: "gray",
-        headerStyle: { backgroundColor: "#000" },
         tabBarStyle:{backgroundColor: "#000"},
       })}
     >
