@@ -1,4 +1,4 @@
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, Image } from "react-native";
 import React, { useLayoutEffect } from "react";
 import { useTailwind } from "tailwind-rn/dist";
 import {
@@ -27,8 +27,8 @@ export const CustomerScreens = () => {
   },[])
 
   return (
-    <ScrollView>
-      <Text>CustomerScreens</Text>
+    <ScrollView style={{backgroundColor:"#87cefa"}}>
+     <Image source={require("../assets/freight.jpg")} style={tw('w-full h-64')}/>
     </ScrollView>
   );
 };

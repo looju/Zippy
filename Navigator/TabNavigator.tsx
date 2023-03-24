@@ -14,7 +14,7 @@ const Tab = createBottomTabNavigator<TabStackParamList>();
 
 export const TabNavigator = () => {
   const navigation = useNavigation();
-  let iconName:string
+  let iconName: string;
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -27,24 +27,28 @@ export const TabNavigator = () => {
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           if (route.name === "Customers") {
-            iconName ="users";
+            iconName = "users";
             size = focused ? 20 : 15;
             color = focused ? "#59c1cc" : "gray";
           } else if (route.name === "Orders") {
-            iconName ="box";
+            iconName = "box";
             size = focused ? 20 : 15;
             color = focused ? "#EB6A7C" : "gray";
           }
 
           return <Entypo name={iconName} size={size} color={color} />;
         },
-        headerTitleAlign:"center",
-        
+        headerTitleAlign: "center",
         tabBarActiveTintColor: "#59c1cc",
         tabBarInactiveTintColor: "gray",
+        headerStyle: { backgroundColor: "#000" },
+        tabBarStyle:{backgroundColor: "#000"},
       })}
     >
-      <Tab.Screen name="Customers" component={CustomerScreens} />
+      <Tab.Screen
+        name="Customers"
+        component={CustomerScreens}
+      />
       <Tab.Screen name="Orders" component={OrderScreens} />
     </Tab.Navigator>
   );
