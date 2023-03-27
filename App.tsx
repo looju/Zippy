@@ -12,6 +12,10 @@ import {
 
 const client = new ApolloClient({
   uri: "https://marnate.stepzen.net/api/vetoed-catfish/__graphql",
+  headers: {
+    Authorization:
+      "apikey marnate::stepzen.io+1000::c5ac73d1ea4c271dc0453631887c700f2cd528afa0f9875e39b4c84d25984592",
+  },
   cache: new InMemoryCache(),
 });
 
