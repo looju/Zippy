@@ -1,6 +1,6 @@
-import { View, Text, ScrollView, Image} from "react-native";
+import { View, Text, ScrollView, Image } from "react-native";
 import React, { useLayoutEffect, useState } from "react";
-import {TextInput} from "react-native-paper"
+import { TextInput } from "react-native-paper";
 import { useTailwind } from "tailwind-rn/dist";
 import {
   CompositeNavigationProp,
