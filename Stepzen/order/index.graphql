@@ -12,6 +12,7 @@ type Order {
       query: "getTrackingItemsById"
       arguments: [{ name: "id", field: "trackingId" }]
     )
+#  customers:TrackingItems @materializer(query:"")   
 }
 
 type OrderList {
