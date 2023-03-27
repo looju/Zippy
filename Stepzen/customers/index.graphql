@@ -1,22 +1,22 @@
 type Customer{
-  name:String;
-  email:String;
+  name:String
+  email:String
 }
 
 type CustomerList{
-  name:ID;
+  name:ID
   values:Customer
 }
 
 
 type Query {
 
- getCustomerById(id:ID!): CustomerList
+ getCustomerById(id:ID!): Customer
     @rest(
       endpoint: "https://zippy-76d47-default-rtdb.firebaseio.com/customers/$id.json"
     )
 
-  Customer: [CustomerList]
+  getCustomer: [CustomerList]
     @rest(
       endpoint: "https://zippy-76d47-default-rtdb.firebaseio.com/customers/.json"
        transforms: [{ pathpattern: [], editor: "objectToArray" }]
