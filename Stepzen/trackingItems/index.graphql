@@ -20,7 +20,7 @@ type Query {
       endpoint: "https://zippy-76d47-default-rtdb.firebaseio.com/trackingItems/$id.json"
     )
 
-  getTrackingItems: TrackingItemsList
+  getTrackingItems: [TrackingItemsList]
     @rest(
       endpoint: "https://zippy-76d47-default-rtdb.firebaseio.com/trackingItems.json"
       transforms: [{ pathpattern: [], editor: "objectToArray" }]
