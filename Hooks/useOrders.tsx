@@ -19,6 +19,7 @@ export const useOrders = () => {
       createdAt: value.createdAt,
       shippingCost: value.shippingCost,
       trackingId: value.trackingId,
+      trackingItems:value.trackingItems
     }));
 
     setOrders(orders);
