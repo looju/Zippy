@@ -10,9 +10,16 @@ export const useCustomerOrders = () => {
   useEffect(() => {
     if (!data) return;
 
-    const orders:Order=data.getOrders.map(({value}:OrderResponse)=>({
-      carrier:value.carrier
-    }))
+    const orders: Order = data.getOrders.map(({ value }: OrderResponse) => ({
+      carrier: value.carrier,
+      lat: value.Lat,
+      lng: value.Lng,
+      address: value.Address,
+      city: value.City,
+      createdAt: value.createdAt,
+      shippingCost: value.shippingCost,
+      trackingId: value.trackingId,
+    }));
   }, [data]);
 
   return (
