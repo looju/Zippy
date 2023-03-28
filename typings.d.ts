@@ -8,7 +8,7 @@ type CustomerList = {
   value: Customer;
 };
 
-type trackingItems = {
+type TrackingItems = {
   customer_id: string;
   items: [Items];
   customer: Customer
@@ -30,6 +30,7 @@ type Order = {
   createdAt: string;
   shippingCost: number;
   trackingId: string;
+  trackingItems:TrackingItems
 };
 
 type OrderResponse = {
