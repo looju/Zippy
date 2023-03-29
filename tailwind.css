@@ -38,10 +38,6 @@
   display: none
 }
 
-.h-60 {
-  height: 15rem
-}
-
 .h-64 {
   height: 16rem
 }
@@ -52,11 +48,6 @@
 
 .border {
   border-width: 1px
-}
-
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity))
 }
 
 .bg-white {

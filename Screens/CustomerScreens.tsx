@@ -10,6 +10,8 @@ import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { TabStackParamList } from "../Navigator/TabNavigator";
 import { RootStackParamList } from "../Navigator/RootNavigator";
+import { useQuery } from "@apollo/client";
+import { GetCustomers } from "../Graphql/queries";
 
 export type CustomerScreensNavigationProps = CompositeNavigationProp<
   BottomTabNavigationProp<TabStackParamList, "Customers">,
@@ -20,6 +22,7 @@ export const CustomerScreens = () => {
   const tw = useTailwind();
   const navigation = useNavigation<CustomerScreensNavigationProps>();
   const [input, setInput] = useState<string>("");
+  const { loading, error, data } = useQuery(GetCustomers);
 
   useLayoutEffect(() => {
     navigation.setOptions({

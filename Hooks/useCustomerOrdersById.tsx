@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import { GetOrders } from "../Graphql/queries";
 
-const useCustomerOrders = (userId: string) => {
+export const useCustomerOrdersById = (userId: string) => {
   const { loading, error, data } = useQuery(GetOrders);
   const [orders, setOrders] = useState<Order[]>([]);
 
@@ -27,13 +27,8 @@ const useCustomerOrders = (userId: string) => {
     );
 
     setOrders(customerOrder);
-  }, [data]);
+  }, [data, userId]);
 
-  return (
-    <View>
-      <Text>useCustomerOrders</Text>
-    </View>
-  );
+  return { loading, error, orders };
 };
 
-export default useCustomerOrders;

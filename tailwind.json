@@ -49,11 +49,6 @@
 			"display": "none"
 		}
 	},
-	"h-60": {
-		"style": {
-			"height": 240
-		}
-	},
 	"h-64": {
 		"style": {
 			"height": 256
@@ -70,12 +65,6 @@
 			"borderRightWidth": 1,
 			"borderBottomWidth": 1,
 			"borderLeftWidth": 1
-		}
-	},
-	"bg-black": {
-		"style": {
-			"--tw-bg-opacity": 1,
-			"backgroundColor": "rgb(0 0 0 / var(--tw-bg-opacity))"
 		}
 	},
 	"bg-white": {
