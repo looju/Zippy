@@ -20,27 +20,31 @@ export const CustomerCard = ({ name, email, userId }: Props) => {
   return (
     <TouchableOpacity style={tw("bg-white")}>
       <Card style={tw("p-5 rounded-lg bg-white")}>
-        <View>
+        <Card.Content>
           <View>
-            <Text style={tw("text-wxl font-bold")}>{name}</Text>
-            <Text style={[tw("text-sm"), { color: "#59c1cc" }]}>
-              ID:{userId}
-            </Text>
+            <View style={tw("flex-row justify-between")}>
+              <View>
+                <Text style={tw("text-wxl font-bold")}>{name}</Text>
+                <Text style={[tw("text-sm"), { color: "#59c1cc" }]}>
+                  ID:{userId}
+                </Text>
+              </View>
+            </View>
+            <View style={tw('flex-row items-center justify-end')}>
+              {loading ? (
+                <ActivityIndicator color="#0000FF" />
+              ) : (
+                <Text style={{color:"#59c1cc"}}>{orders.length}X</Text>
+              )}
+              <Feather
+                name="codesandbox"
+                color={"#59c1cc"}
+                size={50}
+                style={tw("mb-5 ml-auto")}
+              />
+            </View>
           </View>
-          <View>
-            {loading ? (
-              <ActivityIndicator color="#0000FF" />
-            ) : (
-              <Text>{orders.length}X</Text>
-            )}
-            <Feather
-              name="codesandbox"
-              color={"#59c1cc"}
-              size={50}
-              style={tw("mb-5 ml-auto")}
-            />
-          </View>
-        </View>
+        </Card.Content>
       </Card>
     </TouchableOpacity>
   );
