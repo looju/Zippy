@@ -2,6 +2,7 @@ import { View, Text, ScrollView, Image } from "react-native";
 import React, { useLayoutEffect, useState } from "react";
 import { TextInput } from "react-native-paper";
 import { useTailwind } from "tailwind-rn/dist";
+import {CustomerCard} from '../Components/CustomerCard'
 import {
   CompositeNavigationProp,
   useNavigation,
@@ -41,6 +42,9 @@ export const CustomerScreens = () => {
         onChangeText={(text) => setInput(text)}
         style={tw("bg-white pb-0 pt-5 px-10")}
       />
+      {data?.getCustomer.map(({name:ID, value:{email,name}}:CustomerResponse)=>{
+        <CustomerCard name={name} email={email} key={ID} userId={ID}/>
+      })}
     </ScrollView>
   );
 };
