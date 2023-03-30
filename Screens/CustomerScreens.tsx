@@ -1,6 +1,6 @@
 import { View, Text, ScrollView, Image } from "react-native";
 import React, { useLayoutEffect, useState } from "react";
-import { TextInput } from "react-native-paper";
+import { TextInput,Searchbar } from "react-native-paper";
 import { useTailwind } from "tailwind-rn/dist";
 import {CustomerCard} from '../Components/CustomerCard'
 import {
@@ -14,6 +14,7 @@ import { RootStackParamList } from "../Navigator/RootNavigator";
 import { useQuery } from "@apollo/client";
 import { GetCustomers } from "../Graphql/queries";
 
+
 export type CustomerScreensNavigationProps = CompositeNavigationProp<
   BottomTabNavigationProp<TabStackParamList, "Customers">,
   NativeStackNavigationProp<RootStackParamList>
@@ -24,6 +25,9 @@ export const CustomerScreens = () => {
   const navigation = useNavigation<CustomerScreensNavigationProps>();
   const [input, setInput] = useState<string>("");
   const { loading, error, data } = useQuery(GetCustomers);
+
+
+  console.log(data)
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -37,10 +41,12 @@ export const CustomerScreens = () => {
         source={require("../assets/freight.jpg")}
         style={tw("w-full h-64")}
       />
-      <TextInput
+      <Searchbar
         value={input}
         onChangeText={(text) => setInput(text)}
-        style={tw("bg-white pb-0 pt-5 px-10")}
+        inputStyle={tw("items-center justify-items-center")}
+        style={tw("bg-white pb-0 pt-0 px-10")}
+        placeholder="Search"
       />
       {data?.getCustomer.map(({name:ID, value:{email,name}}:CustomerResponse)=>{
         <CustomerCard name={name} email={email} key={ID} userId={ID}/>

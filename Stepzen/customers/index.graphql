@@ -5,7 +5,7 @@ type Customer{
 
 type CustomerList{
   name:ID
-  values:Customer
+  value:Customer
 }
 
 

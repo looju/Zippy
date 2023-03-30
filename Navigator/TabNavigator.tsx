@@ -29,7 +29,7 @@ export const TabNavigator = () => {
           if (route.name === "Customers") {
             iconName = "users";
             size = focused ? 20 : 15;
-            color = focused ? "#59c1cc" : "gray";
+            color = focused ? "#0000FF" : "gray";
           } else if (route.name === "Orders") {
             iconName = "box";
             size = focused ? 20 : 15;
@@ -39,7 +39,7 @@ export const TabNavigator = () => {
           return <Entypo name={iconName} size={size} color={color} />;
         },
         headerTitleAlign: "center",
-        tabBarActiveTintColor: "#59c1cc",
+        tabBarActiveTintColor: "#0000FF",
         tabBarInactiveTintColor: "gray",
         tabBarStyle:{backgroundColor: "#000"},
       })}
