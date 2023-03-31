@@ -44,12 +44,14 @@ export const CustomerScreens = () => {
         style={tw("bg-white pb-0 pt-0 px-10 mb-10")}
         placeholder="Search"
       />
-     
-       {data?.getCustomer.map(
-        ({ name: ID, value: { email, name } }: CustomerResponse) => {
-          <CustomerCard name={name} email={email} key={ID} userId={ID}/>
-        }
-      )} 
+
+      {data?.getCustomer
+        ?.filter((customer: CustomerList) =>
+          customer.value.name.includes(input)
+        )
+        .map(({ name: ID, value: { email, name } }: CustomerResponse) => {
+          <CustomerCard name={name} email={email} key={ID} userId={ID} />;
+        })}
     </ScrollView>
   );
 };
