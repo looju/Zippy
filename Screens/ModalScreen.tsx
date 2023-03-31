@@ -41,13 +41,22 @@ export const ModalScreen = () => {
         <AntDesign name="closecircle" />
       </TouchableOpacity>
 
-      <View>
-        <View>
-          <Text>{name}</Text>
-          <Text>deliveries</Text>
+      <View style={tw("mt-10")}>
+        <View style={[tw("py-5 border-b"), { borderColor: "#59c1cc" }]}>
+          <Text
+            style={[tw("text-center text-xl font-bold"), { color: "#59c1cc" }]}
+          >
+            {name}
+          </Text>
+          <Text style={tw("text-center text-sm italic")}>deliveries</Text>
         </View>
       </View>
-      <FlatList data={orders} keyExtractor={(order) => order.trackingId}   renderItem={({item}) => <DeliveryCard order={item} />} />
+      <FlatList
+        data={orders}
+        keyExtractor={(order) => order.trackingId}
+        renderItem={({ item }) => <DeliveryCard order={item} />}
+        contentContainerStyle={{ paddingBottom: 200 }}
+      />
     </View>
   );
 };
