@@ -18,7 +18,15 @@ export const CustomerCard = ({ name, email, userId }: Props) => {
   const tw = useTailwind();
   const navigation = useNavigation<CustomerScreensNavigationProps>();
   return (
-    <TouchableOpacity style={tw("bg-white")}>
+    <TouchableOpacity
+      style={tw("bg-white")}
+      onPress={() =>
+        navigation.navigate("ModalScreen", {
+          name: name,
+          userId: userId,
+        })
+      }
+    >
       <Card style={tw("p-5 rounded-lg bg-white")}>
         <Card.Content>
           <View>
@@ -30,11 +38,11 @@ export const CustomerCard = ({ name, email, userId }: Props) => {
                 </Text>
               </View>
             </View>
-            <View style={tw('flex-row items-center justify-end')}>
+            <View style={tw("flex-row items-center justify-end")}>
               {loading ? (
                 <ActivityIndicator color="#0000FF" />
               ) : (
-                <Text style={{color:"#59c1cc"}}>{orders.length}X</Text>
+                <Text style={{ color: "#59c1cc" }}>{orders.length}X</Text>
               )}
               <Feather
                 name="codesandbox"
