@@ -41,14 +41,22 @@ export const DeliveryCard = ({ order }: Params) => {
           </Text>
           <Divider style={{ backgroundColor: "#fff" }} />
         </View>
-        <View>
-          <Text>Adress</Text>
-          <Text>
-            {order.Address}
-            {order.City}
+        <View style={tw("mx-auto")}>
+          <Text style={tw("text-base text-white font-bold text-center mt-5")}>
+            Adress
+          </Text>
+          <Text style={tw("text-sm text-white text-center")}>
+            {order.Address} {order.City}
+          </Text>
+          <Text style={tw("text-base text-white font-bold text-center mt-5")}>
+            Shipping cost
+          </Text>
+          <Text style={tw("text-sm text-white text-center")}>
+            {order.shippingCost}
           </Text>
         </View>
       </View>
+      <Divider style={{ backgroundColor: "#fff" }} />
     </Card>
   );
 };
