@@ -52,11 +52,21 @@ export const DeliveryCard = ({ order }: Params) => {
             Shipping cost
           </Text>
           <Text style={tw("text-sm text-white text-center")}>
-            {order.shippingCost}
+            curr convert lib {order.shippingCost}
           </Text>
         </View>
       </View>
       <Divider style={{ backgroundColor: "#fff" }} />
+      <View style={tw("p-5")}>
+        {order.trackingItems.items.map((item) => (
+          <View style={tw("flex-row justify-between items-center")}>
+            <Text style={tw("italic text-sm text-white")}>{item.name}</Text>
+            <Text style={tw(" text-xl text-white")}>
+              X {item.quantity.toString()}
+            </Text>
+          </View>
+        ))}
+      </View>
     </Card>
   );
 };
