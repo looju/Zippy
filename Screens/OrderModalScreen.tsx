@@ -11,6 +11,7 @@ import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { TabStackParamList } from "../Navigator/TabNavigator";
 import { RootStackParamList } from "../Navigator/RootNavigator";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { DeliveryCard } from "../Components/DeliveryCard";
 
 type OrderModalScreenRouteProps = RouteProp<RootStackParamList,'OrderModalScreen'>;
 
@@ -29,13 +30,14 @@ export const OrderModalScreen = () => {
     navigation.setOptions({
         headerTitle:order.trackingItems.customer.name,
         headerTitleStyle:{color:"#000"},
-        headerBackTitle:"Deliveries"
+        headerBackTitle:"Deliveries",
+        headerTintColor:"##EB6A7C"
     });
   }, [order]);
 
   return (
     <View style={tw("-mt-2")}>
-      <Text>OrderModalScreen</Text>
+     <DeliveryCard order={order} fullWidth/>
     </View>
   );
 };

@@ -7,28 +7,29 @@ import MapView, { Marker } from "react-native-maps";
 
 type Params = {
   order: Order;
+  fullWidth?: boolean;
 };
 
-export const DeliveryCard = ({ order }: Params) => {
+export const DeliveryCard = ({ order, fullWidth }: Params) => {
   const tw = useTailwind();
 
   return (
     <Card
       style={[
-        tw("my-2 rounded-lg"),
+        tw(`${fullWidth ? "rounded-none m-0" : "rounded-lg"} "my-2 "`),
         {
           padding: 0,
           paddingTop: 16,
-          paddingHorizontal:5,
+          paddingHorizontal: 5,
           shadowColor: "#000",
           shadowOffset: { width: 0, height: 2 },
           shadowOpacity: 0.2,
           shadowRadius: 4,
-          backgroundColor: "#59c1cc",
+          backgroundColor: fullWidth ? "##EB6A7C" : "#59c1cc",
         },
       ]}
     >
-      <View>
+      <View style={fullWidth && { height: "100%" }}>
         <Entypo name="box" size={50} color={"#fff"} />
         <View>
           <Text
@@ -76,7 +77,7 @@ export const DeliveryCard = ({ order }: Params) => {
           latitudeDelta: 0.005,
           longitudeDelta: 0.005,
         }}
-        style={[tw("w-full"), { height: 200 }]}
+        style={[tw("w-full"), { flexGrow: 1 }, !fullWidth && { height: 200 }]}
         userInterfaceStyle="dark"
         showsBuildings
         showsTraffic
