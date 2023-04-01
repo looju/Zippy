@@ -19,7 +19,7 @@ type Props = {
 };
 
 type OrderCardNavigationProps = CompositeNavigationProp<
-  BottomTabNavigationProp<TabStackParamList, "Orders">,
+  BottomTabNavigationProp<TabStackParamList, "Orders">, 
   NativeStackNavigationProp<RootStackParamList>
 >;
 
