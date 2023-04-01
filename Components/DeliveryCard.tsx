@@ -3,6 +3,7 @@ import React from "react";
 import { useTailwind } from "tailwind-rn/dist";
 import { Card, Divider } from "react-native-paper";
 import Entypo from "react-native-vector-icons/Entypo";
+import MapView, { Marker } from "react-native-maps";
 
 type Params = {
   order: Order;
@@ -41,7 +42,7 @@ export const DeliveryCard = ({ order }: Params) => {
           </Text>
           <Divider style={{ backgroundColor: "#fff" }} />
         </View>
-        <View style={tw("mx-auto")}>
+        <View style={tw("mx-auto pb-5")}>
           <Text style={tw("text-base text-white font-bold text-center mt-5")}>
             Adress
           </Text>
@@ -67,6 +68,28 @@ export const DeliveryCard = ({ order }: Params) => {
           </View>
         ))}
       </View>
+      <MapView
+        initialRegion={{
+          latitude: order.Lat,
+          longitude: order.Lng,
+          latitudeDelta: 0.005,
+          longitudeDelta: 0.005,
+        }}
+        style={[tw("w-full"), { height: 200 }]}
+        userInterfaceStyle="dark"
+        showsBuildings
+        showsTraffic
+      >
+        {order.Lat && order.Lng && (
+          <Marker
+            coordinate={{ longitude: order.Lng, latitude: order.Lat }}
+            title="Delivery Location"
+            description={order.Address}
+            pinColor="red"
+            identifier="Delivery address"
+          />
+        )}
+      </MapView>
     </Card>
   );
 };
