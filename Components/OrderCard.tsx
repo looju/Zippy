@@ -19,15 +19,17 @@ type Props = {
 };
 
 type OrderCardNavigationProps = CompositeNavigationProp<
-  BottomTabNavigationProp<TabStackParamList>,
-  NativeStackNavigationProp<RootStackParamList,"OrderModalScreen">
+  BottomTabNavigationProp<TabStackParamList, "Orders">,
+  NativeStackNavigationProp<RootStackParamList>
 >;
 
 export const OrderCard = ({ key, item }: Props) => {
   const tw = useTailwind();
-  const navigation = useNavigation();
+  const navigation = useNavigation<OrderCardNavigationProps>();
   return (
-    <TouchableOpacity>
+    <TouchableOpacity
+      onPress={() => navigation.navigate("OrderModalScreen", { order: item })}
+    >
       <Card containerStyle={tw("px-5 rounded-lg")}>
         <View style={tw("flex-row justify-between items-center")}>
           <View>

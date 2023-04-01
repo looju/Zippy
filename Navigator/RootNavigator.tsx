@@ -9,7 +9,7 @@ const RootStack = createStackNavigator<RootStackParamList>();
 export type RootStackParamList = {
   Main: undefined;
   ModalScreen: { userId: string; name: string }; //route values it receives
-  OrderModalScreen: any;
+  OrderModalScreen: {order:Order};
 };
 
 export const RootNavigator = () => {
