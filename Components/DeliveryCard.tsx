@@ -62,7 +62,10 @@ export const DeliveryCard = ({ order, fullWidth }: Params) => {
       <Divider style={{ backgroundColor: "#fff" }} />
       <View style={tw("p-5")}>
         {order.trackingItems.items.map((item) => (
-          <View style={tw("flex-row justify-between items-center")}>
+          <View
+            style={tw("flex-row justify-between items-center")}
+            key={item.item_id}
+          >
             <Text style={tw("italic text-sm text-white")}>{item.name}</Text>
             <Text style={tw(" text-xl text-white")}>
               X {item.quantity.toString()}
