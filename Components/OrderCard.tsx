@@ -21,6 +21,14 @@ export const OrderCard = ({ key, item }: Props) => {
             <Text>{new Date(item.createdAt).toLocaleDateString()}</Text>
           </View>
         </View>
+        <View>
+          <Text style={[tw("text-grey-400"), { fontSize: 10 }]}>
+            {item.carrier}-{item.trackingId}
+          </Text>
+          <Text style={tw("text-grey-500 text-xl")}>
+            {item.trackingItems.customer.name}
+          </Text>
+        </View>
         <View style={tw("flex-row items-center")}>
           <Text style={[tw("text-sm"), { color: "#EB6A7C" }]}>
             {item.trackingItems.items.length}X

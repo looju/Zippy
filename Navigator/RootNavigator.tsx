@@ -2,6 +2,8 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { TabNavigator } from "./TabNavigator";
 import { ModalScreen } from './../Screens/ModalScreen';
+import { OrderModalScreen } from "../Screens/OrderModalScreen";
+
 
 
 const RootStack = createStackNavigator<RootStackParamList>();
@@ -24,6 +26,9 @@ export const RootNavigator = () => {
           component={ModalScreen}
           options={{ headerShown: false }}
         />
+      </RootStack.Group>
+      <RootStack.Group>
+        <RootStack.Screen name="Order" component={OrderModalScreen} />
       </RootStack.Group>
     </RootStack.Navigator>
   );
