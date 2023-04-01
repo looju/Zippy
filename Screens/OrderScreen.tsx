@@ -11,6 +11,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { useTailwind } from "tailwind-rn";
 import { useOrders } from "./../Hooks/useOrders";
+import { OrderCard } from './../Components/OrderCard';
 
 type OrderScreenNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<TabStackParamList, "Orders">,
@@ -44,7 +45,7 @@ export const OrderScreens = () => {
           } else {
             return new Date(a.createdAt) < new Date(b.createdAt) ? 1 : -1;
           }
-        })}
+        }).map((order:Order)=><OrderCard key={order.trackingId} item={order}/>)}
       </View>
     </ScrollView>
   );

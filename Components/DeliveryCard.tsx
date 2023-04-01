@@ -19,6 +19,7 @@ export const DeliveryCard = ({ order }: Params) => {
         {
           padding: 0,
           paddingTop: 16,
+          paddingHorizontal:5,
           shadowColor: "#000",
           shadowOffset: { width: 0, height: 2 },
           shadowOpacity: 0.2,

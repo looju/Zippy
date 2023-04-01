@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { View, TouchableOpacity, Text, ActivityIndicator } from "react-native";
-import { Card } from "react-native-paper";
+import {Card} from "@rneui/themed"
 import { useTailwind } from "tailwind-rn/dist";
 import { CustomerScreensNavigationProps } from "../Screens/CustomerScreens";
 import { useCustomerOrdersById } from "./../Hooks/useCustomerOrdersById";
@@ -27,35 +27,36 @@ export const CustomerCard = ({ name, email, userId }: Props) => {
         })
       }
     >
-      <Card style={tw("p-5 rounded-lg bg-black ")}>
-        <Card.Content>
-          <View>
-            <View style={tw("flex-row justify-between")}>
-              <View>
-                <Text style={tw("text-xl font-bold")}>{name}</Text>
-                <Text style={[tw("text-sm"), { color: "#59c1cc" }]}>
-                  ID:{userId}
-                </Text>
-              </View>
-            </View>
-            <View style={tw("flex-row items-center justify-end")}>
-              {loading ? (
-                <ActivityIndicator color="#59c1cc" />
-              ) : (
-                <View style={{left:250}}>
-                  
-                  <Text style={{ color: "#59c1cc" }}>{orders.length}X</Text>
-                </View>
-              )}
-              <Feather
-                name="codesandbox"
-                color={"#59c1cc"}
-                size={50}
-                style={tw("mb-5 ml-auto")}
-              />
+      
+    
+      <Card containerStyle={tw("p-5  rounded-lg bg-black ")}>
+        <View>
+          <View style={tw("flex-row justify-between")}>
+            <View>
+              <Text style={tw("text-xl font-bold")}>{name}</Text>
+              <Text style={[tw("text-sm"), { color: "#59c1cc" }]}>
+                ID:{userId}
+              </Text>
             </View>
           </View>
-        </Card.Content>
+          <View style={tw("flex-row items-center justify-end")}>
+            {loading ? (
+              <ActivityIndicator color="#59c1cc" />
+            ) : (
+              <View style={{ left: 250 }}>
+                <Text style={{ color: "#59c1cc" }}>{orders.length}X</Text>
+              </View>
+            )}
+            <Feather
+              name="codesandbox"
+              color={"#59c1cc"}
+              size={50}
+              style={tw("mb-5 ml-auto")}
+            />
+          </View>
+        </View>
+        <Card.Divider/>
+        <Text>{email}</Text>
       </Card>
     </TouchableOpacity>
   );
