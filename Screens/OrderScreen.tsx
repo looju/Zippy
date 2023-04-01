@@ -38,6 +38,13 @@ export const OrderScreens = () => {
         >
           {ascending ? "Showing:Older first" : "Showing: Most recent first"}
         </Button>
+        {orders.sort((a, b) => {
+          if (ascending) {
+            return new Date(a.createdAt) > new Date(b.createdAt) ? 1 : -1;
+          } else {
+            return new Date(a.createdAt) < new Date(b.createdAt) ? 1 : -1;
+          }
+        })}
       </View>
     </ScrollView>
   );
