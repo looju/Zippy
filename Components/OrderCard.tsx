@@ -4,14 +4,28 @@ import { Card } from "@rneui/themed";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import Feather from "react-native-vector-icons/Feather";
 import { useTailwind } from "tailwind-rn";
+import {
+  CompositeNavigationProp,
+  useNavigation,
+} from "@react-navigation/native";
+import { RootStackParamList } from "../Navigator/RootNavigator";
+import { TabStackParamList } from "../Navigator/TabNavigator";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 
 type Props = {
   key: string;
   item: Order;
 };
 
+type OrderCardNavigationProps = CompositeNavigationProp<
+  BottomTabNavigationProp<TabStackParamList>,
+  NativeStackNavigationProp<RootStackParamList,"OrderModalScreen">
+>;
+
 export const OrderCard = ({ key, item }: Props) => {
   const tw = useTailwind();
+  const navigation = useNavigation();
   return (
     <TouchableOpacity>
       <Card containerStyle={tw("px-5 rounded-lg")}>

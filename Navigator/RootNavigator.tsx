@@ -1,17 +1,15 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { TabNavigator } from "./TabNavigator";
-import { ModalScreen } from './../Screens/ModalScreen';
+import { ModalScreen } from "./../Screens/ModalScreen";
 import { OrderModalScreen } from "../Screens/OrderModalScreen";
-
-
 
 const RootStack = createStackNavigator<RootStackParamList>();
 
 export type RootStackParamList = {
   Main: undefined;
-  ModalScreen: { userId: string; name: string };  //route values it receives
-  Order: any;
+  ModalScreen: { userId: string; name: string }; //route values it receives
+  OrderModalScreen: any;
 };
 
 export const RootNavigator = () => {
@@ -28,7 +26,10 @@ export const RootNavigator = () => {
         />
       </RootStack.Group>
       <RootStack.Group>
-        <RootStack.Screen name="Order" component={OrderModalScreen} />
+        <RootStack.Screen
+          name="OrderModalScreen"
+          component={OrderModalScreen}
+        />
       </RootStack.Group>
     </RootStack.Navigator>
   );
