@@ -31,6 +31,10 @@ export const CustomerScreens = () => {
     });
   }, []);
 
+
+
+console.log(data)
+
   return (
     <ScrollView style={{ backgroundColor: "#87cefa", flex: 1 }}>
       <Image
@@ -49,9 +53,9 @@ export const CustomerScreens = () => {
         ?.filter((customer: CustomerList) =>
           customer.value.name.includes(input)
         )
-        .map(({ name: ID, value: { email, name } }: CustomerResponse) => {
-          <CustomerCard name={name} email={email} key={ID} userId={ID} />;
-        })}
+        .map(({ name: ID, value: { email, name } }: CustomerResponse) => 
+          <CustomerCard name={name} email={email} key={ID} userId={ID} />
+        )}
     </ScrollView>
   );
 };

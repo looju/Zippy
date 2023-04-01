@@ -19,7 +19,7 @@ export const CustomerCard = ({ name, email, userId }: Props) => {
   const navigation = useNavigation<CustomerScreensNavigationProps>();
   return (
     <TouchableOpacity
-      style={tw("bg-white")}
+      style={tw("bg-black")}
       onPress={() =>
         navigation.navigate("ModalScreen", {
           name: name,
@@ -27,12 +27,12 @@ export const CustomerCard = ({ name, email, userId }: Props) => {
         })
       }
     >
-      <Card style={tw("p-5 rounded-lg bg-white")}>
+      <Card style={tw("p-5 rounded-lg bg-black ")}>
         <Card.Content>
           <View>
             <View style={tw("flex-row justify-between")}>
               <View>
-                <Text style={tw("text-wxl font-bold")}>{name}</Text>
+                <Text style={tw("text-xl font-bold")}>{name}</Text>
                 <Text style={[tw("text-sm"), { color: "#59c1cc" }]}>
                   ID:{userId}
                 </Text>
@@ -40,9 +40,12 @@ export const CustomerCard = ({ name, email, userId }: Props) => {
             </View>
             <View style={tw("flex-row items-center justify-end")}>
               {loading ? (
-                <ActivityIndicator color="#0000FF" />
+                <ActivityIndicator color="#59c1cc" />
               ) : (
-                <Text style={{ color: "#59c1cc" }}>{orders.length}X</Text>
+                <View style={{left:250}}>
+                  
+                  <Text style={{ color: "#59c1cc" }}>{orders.length}X</Text>
+                </View>
               )}
               <Feather
                 name="codesandbox"
