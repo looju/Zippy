@@ -2,7 +2,7 @@
 Zippy is a cross-platform application that allows managers and couriers to keep track of theri customer delivery orders. The aim of this project is to implement large static data into a useful graphQl data endpoint.
 
 
-###TECHNOLOGIES:
+## TECHNOLOGIES:
 * React native(Expo) 
 * React Navigation
 * Firebase
