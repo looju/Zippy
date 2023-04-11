@@ -3,7 +3,7 @@ Zippy is a cross-platform application that allows managers and couriers to keep 
 
 
 ### Technologies used:
--React native(Expo)
+-React native(Expo) &nbsp; &nbsp; &nbsp; &nbsp;
 -React Navigation
 -Firebase
 -StepZen
