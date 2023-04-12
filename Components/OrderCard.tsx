@@ -33,16 +33,16 @@ export const OrderCard = ({ key, item }: Props) => {
       <Card containerStyle={tw("px-5 rounded-lg")}>
         <View style={tw("flex-row justify-between items-center")}>
           <View>
-            <MaterialCommunityIcons name="truck-community" color={"#EB6A7C"} />
+            <MaterialCommunityIcons name="truck" color={"#EB6A7C"} />
             <Text>{new Date(item.createdAt).toLocaleDateString()}</Text>
           </View>
         </View>
         <View>
-          <Text style={[tw("text-grey-400"), { fontSize: 10 }]}>
+          <Text style={[tw("text-xl"), { fontSize: 10, color:"grey" }]}>
             {item.carrier}-{item.trackingId}
           </Text>
-          <Text style={tw("text-grey-500 text-xl")}>
-            {item.trackingItems.customer.name}
+          <Text style={[tw("text-xl"),{color:"grey"}]}>
+            {item.trackingItems.customer?.name}
           </Text>
         </View>
         <View style={tw("flex-row items-center")}>

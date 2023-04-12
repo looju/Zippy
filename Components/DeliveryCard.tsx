@@ -16,10 +16,11 @@ export const DeliveryCard = ({ order, fullWidth }: Params) => {
   return (
     <Card
       style={[
-        tw(`${fullWidth ? "rounded-none m-0" : "rounded-lg"} my-2`),
+        tw(`${fullWidth ? "rounded-none m-0" : "rounded-lg"}`),
         {
           padding: 0,
           paddingTop: 16,
+          marginTop:10,
           paddingHorizontal: 5,
           shadowColor: "#000",
           shadowOffset: { width: 0, height: 2 },
@@ -69,7 +70,7 @@ export const DeliveryCard = ({ order, fullWidth }: Params) => {
               style={tw("flex-row justify-between items-center")}
               key={item.item_id}
             >
-              <Text style={tw("italic text-sm text-white")}>{item.name}</Text>
+              <Text style={tw("italic text-sm text-white")}>{item?.name}</Text>
               <Text style={tw(" text-xl text-white")}>
                 X {item.quantity.toString()}
               </Text>
@@ -84,7 +85,6 @@ export const DeliveryCard = ({ order, fullWidth }: Params) => {
             longitudeDelta: 0.005,
           }}
           style={[tw("w-full"), { flexGrow: 1 }, !fullWidth && { height: 200 }]}
-          userInterfaceStyle="dark"
           showsBuildings
           showsTraffic
         >

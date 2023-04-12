@@ -45,7 +45,7 @@ export const OrderScreens = () => {
           } else {
             return new Date(a.createdAt) < new Date(b.createdAt) ? 1 : -1;
           }
-        }).map((order:Order)=><OrderCard key={order.trackingId} item={order}/>)}
+        }).map((order)=><OrderCard key={order.trackingId} item={order}/>)}
       </View>
     </ScrollView>
   );

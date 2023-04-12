@@ -28,7 +28,7 @@ export const OrderModalScreen = () => {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-        headerTitle:order.trackingItems.customer.name,
+        headerTitle:order.trackingItems.customer?.name,
         headerTitleStyle:{color:"#000"},
         headerBackTitle:"Deliveries",
         headerTintColor:"##EB6A7C"
@@ -36,7 +36,7 @@ export const OrderModalScreen = () => {
   }, [order]);
 
   return (
-    <View style={tw("-mt-2")}>
+    <View style={tw("mt-2")}>
      <DeliveryCard order={order} fullWidth/>
     </View>
   );
