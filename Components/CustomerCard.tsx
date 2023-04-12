@@ -43,7 +43,7 @@ export const CustomerCard = ({ name, email, userId }: Props) => {
             {loading ? (
               <ActivityIndicator color="#59c1cc" />
             ) : (
-              <View style={{ left: 250 }}>
+              <View style={{ left: 220 }}>
                 <Text style={{ color: "#59c1cc" }}>{orders.length}X</Text>
               </View>
             )}

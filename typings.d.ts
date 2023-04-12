@@ -24,8 +24,8 @@ type Items = {
 type Order = {
   Address: string;
   City: string;
-  Lat: number;
-  Lng: number;
+  lat: number;
+  lng: number;
   carrier: string;
   createdAt: string;
   shippingCost: number;

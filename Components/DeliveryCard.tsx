@@ -13,6 +13,7 @@ type Params = {
 export const DeliveryCard = ({ order, fullWidth }: Params) => {
   const tw = useTailwind();
 
+
   return (
     <Card
       style={[
@@ -79,14 +80,14 @@ export const DeliveryCard = ({ order, fullWidth }: Params) => {
         </View>
         <MapView
           initialRegion={{
-            latitude: order.Lat,
-            longitude: order.Lng,
+            latitude:order.lat,
+            longitude:order.lng,
             latitudeDelta: 0.005,
             longitudeDelta: 0.005,
           }}
-          style={[tw("w-full"), { flexGrow: 1, height: 200 }]}
-          showsBuildings
-          showsTraffic
+           style={[tw("w-full"), { flexGrow: 1, height: 200 }, !fullWidth && { height: 200 }]}
+           showsBuildings
+           showsTraffic
         >
           {/* {order.Lat && order.Lng && (
             <Marker
