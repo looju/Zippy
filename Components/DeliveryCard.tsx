@@ -26,7 +26,7 @@ export const DeliveryCard = ({ order, fullWidth }: Params) => {
           shadowOffset: { width: 0, height: 2 },
           shadowOpacity: 0.2,
           shadowRadius: 4,
-          backgroundColor: fullWidth ? "##EB6A7C" : "#59c1cc",
+          backgroundColor: fullWidth ? "#EB6A7C" : "#59c1cc",
         },
       ]}
     >
@@ -84,11 +84,11 @@ export const DeliveryCard = ({ order, fullWidth }: Params) => {
             latitudeDelta: 0.005,
             longitudeDelta: 0.005,
           }}
-          style={[tw("w-full"), { flexGrow: 1 }, !fullWidth && { height: 200 }]}
+          style={[tw("w-full"), { flexGrow: 1, height: 200 }]}
           showsBuildings
           showsTraffic
         >
-          {order.Lat && order.Lng && (
+          {/* {order.Lat && order.Lng && (
             <Marker
               coordinate={{ longitude: order.Lng, latitude: order.Lat }}
               title="Delivery Location"
@@ -96,7 +96,7 @@ export const DeliveryCard = ({ order, fullWidth }: Params) => {
               pinColor="red"
               identifier="Delivery address"
             />
-          )}
+          )} */}
         </MapView>
       </View>
     </Card>
