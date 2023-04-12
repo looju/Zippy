@@ -19,7 +19,7 @@ export const CustomerCard = ({ name, email, userId }: Props) => {
   const navigation = useNavigation<CustomerScreensNavigationProps>();
   return (
     <TouchableOpacity
-      style={tw("bg-black")}
+      style={tw("bg-white")}
       onPress={() =>
         navigation.navigate("ModalScreen", {
           name: name,
@@ -29,7 +29,7 @@ export const CustomerCard = ({ name, email, userId }: Props) => {
     >
       
     
-      <Card containerStyle={tw("p-5  rounded-lg bg-black ")}>
+      <Card containerStyle={tw("p-5  rounded-lg bg-white ")}>
         <View>
           <View style={tw("flex-row justify-between")}>
             <View>

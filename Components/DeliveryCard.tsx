@@ -16,7 +16,7 @@ export const DeliveryCard = ({ order, fullWidth }: Params) => {
   return (
     <Card
       style={[
-        tw(`${fullWidth ? "rounded-none m-0" : "rounded-lg"} "my-2 "`),
+        tw(`${fullWidth ? "rounded-none m-0" : "rounded-lg"} my-2`),
         {
           padding: 0,
           paddingTop: 16,

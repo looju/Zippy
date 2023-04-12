@@ -39,14 +39,14 @@ console.log(data)
     <ScrollView style={{ backgroundColor: "#87cefa", flex: 1 }}>
       <Image
         source={require("../assets/freight.jpg")}
-        style={tw("w-full h-64")}
+        style={[tw("w-full"),{height:200}]}
       />
       <Searchbar
         value={input}
         onChangeText={(text) => setInput(text)}
         inputStyle={tw("items-center justify-center")}
-        style={tw("bg-white pb-0 pt-0 px-10 mb-10")}
-        placeholder="Search"
+        style={[tw("bg-white pb-0 pt-0 px-10 mb-10"),{top:20}]}
+        placeholder="Search by id"
       />
 
       {data?.getCustomer
