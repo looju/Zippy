@@ -42,7 +42,7 @@ export const OrderCard = ({ key, item }: Props) => {
             {item.carrier}-{item.trackingId}
           </Text>
           <Text style={[tw("text-xl"),{color:"grey"}]}>
-            {item.trackingItems.customer?.name}
+            {item.trackingItems.customers.name}
           </Text>
         </View>
         <View style={tw("flex-row items-center")}>

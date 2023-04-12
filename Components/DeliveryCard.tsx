@@ -89,15 +89,15 @@ export const DeliveryCard = ({ order, fullWidth }: Params) => {
            showsBuildings
            showsTraffic
         >
-          {/* {order.Lat && order.Lng && (
+          {order.lat && order.lng && (
             <Marker
-              coordinate={{ longitude: order.Lng, latitude: order.Lat }}
+              coordinate={{ longitude: order.lng, latitude: order.lat }}
               title="Delivery Location"
               description={order.Address}
               pinColor="red"
               identifier="Delivery address"
             />
-          )} */}
+          )}
         </MapView>
       </View>
     </Card>

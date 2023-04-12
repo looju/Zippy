@@ -19,7 +19,6 @@ export const CustomerCard = ({ name, email, userId }: Props) => {
   const navigation = useNavigation<CustomerScreensNavigationProps>();
   return (
     <TouchableOpacity
-      style={tw("bg-white")}
       onPress={() =>
         navigation.navigate("ModalScreen", {
           name: name,

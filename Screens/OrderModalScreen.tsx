@@ -28,15 +28,15 @@ export const OrderModalScreen = () => {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-        headerTitle:order.trackingItems.customer?.name,
+        headerTitle:order.trackingItems.customers.name,
         headerTitleStyle:{color:"#000"},
         headerBackTitle:"Deliveries",
-        headerTintColor:"##EB6A7C"
+        headerTintColor:"#EB6A7C"
     });
   }, [order]);
 
   return (
-    <View style={tw("mt-2")}>
+    <View >
      <DeliveryCard order={order} fullWidth/>
     </View>
   );

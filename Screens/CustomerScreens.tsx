@@ -33,7 +33,7 @@ export const CustomerScreens = () => {
 
 
 
-console.log(data)
+
 
   return (
     <ScrollView style={{ backgroundColor: "#87cefa", flex: 1 }}>
